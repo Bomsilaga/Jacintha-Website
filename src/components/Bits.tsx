@@ -127,8 +127,13 @@ export function PageHero({
   title: React.ReactNode;
   intro: React.ReactNode;
   meta?: readonly { label: string; value: string }[];
-  /** Optional photograph; when supplied the hero becomes a split layout. */
-  image?: { src: string; alt: string };
+  /**
+   * Optional photograph; when supplied the hero becomes a split layout.
+   * Set `cutout` for a background-removed PNG — it is then composited onto a
+   * branded panel and anchored to the bottom edge, rather than cropped to
+   * fill like a rectangular photo.
+   */
+  image?: { src: string; alt: string; cutout?: boolean };
 }) {
   const copy = (
     <>
@@ -178,25 +183,54 @@ export function PageHero({
           <div className="lg:col-span-6">{copy}</div>
           <div className="lg:col-span-6 lg:-mr-10 lg:h-full">
             <div
-              className="anim-rise relative h-[20rem] w-full overflow-hidden bg-mist-2 sm:h-[26rem] lg:h-full lg:min-h-[30rem]"
+              className={`anim-rise relative h-[20rem] w-full overflow-hidden sm:h-[26rem] lg:h-full lg:min-h-[30rem] ${
+                image.cutout ? "" : "bg-mist-2"
+              }`}
               style={{ animationDelay: "320ms" }}
             >
+              {image.cutout ? (
+                <>
+                  {/* Panel the cutout stands on: a soft brand wash with a
+                      grounding ellipse, so the figure does not float. */}
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      background:
+                        "radial-gradient(120% 90% at 50% 8%, var(--color-mist-2) 0%, var(--color-mist-3) 62%, var(--color-mist-2) 100%)",
+                    }}
+                    aria-hidden
+                  />
+                  <div
+                    className="absolute inset-x-[12%] bottom-[6%] h-6 rounded-[50%] blur-xl"
+                    style={{ background: "rgba(12,74,110,0.22)" }}
+                    aria-hidden
+                  />
+                </>
+              ) : null}
+
               <Image
                 src={image.src}
                 alt={image.alt}
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover object-center"
+                className={
+                  image.cutout
+                    ? "object-contain object-bottom p-4"
+                    : "object-cover object-center"
+                }
               />
-              <div
-                className="pointer-events-none absolute inset-0 hidden lg:block"
-                style={{
-                  background:
-                    "linear-gradient(to right, var(--color-mist) 0%, rgba(255,255,255,0) 16%)",
-                }}
-                aria-hidden
-              />
+
+              {image.cutout ? null : (
+                <div
+                  className="pointer-events-none absolute inset-0 hidden lg:block"
+                  style={{
+                    background:
+                      "linear-gradient(to right, var(--color-mist) 0%, rgba(255,255,255,0) 16%)",
+                  }}
+                  aria-hidden
+                />
+              )}
             </div>
           </div>
         </div>

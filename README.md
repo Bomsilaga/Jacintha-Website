@@ -27,7 +27,7 @@ safety testing, HACCP systems, audits and specialist QA labour hire.
 | Served file | Used on | Source |
 | --- | --- | --- |
 | `public/hero-lab.jpg` | Home hero | `assets/epitome-hero.png` |
-| `public/qa-analyst.jpg` | Labour hire hero | `assets/epitome-other.png` |
+| `public/qa-analyst.png` | Labour hire hero | `assets/epitome-analyst-cutout.png` |
 
 `assets/` holds the original uploads and is not served. The files in `public/`
 are cropped and compressed derivatives — regenerate them from `assets/` with
