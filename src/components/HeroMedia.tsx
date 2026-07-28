@@ -35,9 +35,14 @@ export default function HeroMedia() {
         className="object-cover object-center"
       />
       {/* Feathers the photograph into the page on large screens so it reads
-          as one composition rather than a pasted-in rectangle. */}
+          as one composition rather than a pasted-in rectangle. Kept narrow —
+          a wider fade washed over the subject's hands and culture plate. */}
       <div
-        className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-mist via-transparent to-transparent lg:block"
+        className="pointer-events-none absolute inset-0 hidden lg:block"
+        style={{
+          background:
+            "linear-gradient(to right, var(--color-mist) 0%, rgba(255,255,255,0) 16%)",
+        }}
         aria-hidden
       />
     </div>

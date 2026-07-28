@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Reveal from "./Reveal";
 import { standards, site } from "@/lib/site";
 
@@ -120,46 +121,90 @@ export function PageHero({
   title,
   intro,
   meta,
+  image,
 }: {
   eyebrow: string;
   title: React.ReactNode;
   intro: React.ReactNode;
   meta?: readonly { label: string; value: string }[];
+  /** Optional photograph; when supplied the hero becomes a split layout. */
+  image?: { src: string; alt: string };
 }) {
+  const copy = (
+    <>
+      <p className="label label-tick anim-rise text-ink-3">{eyebrow}</p>
+      <h1
+        className={`font-display t-hero anim-rise mt-7 ${image ? "" : "max-w-5xl"}`}
+        style={{ animationDelay: "80ms" }}
+      >
+        {title}
+      </h1>
+      <p
+        className="lede anim-rise mt-8 max-w-2xl"
+        style={{ animationDelay: "160ms" }}
+      >
+        {intro}
+      </p>
+
+      {meta ? (
+        <dl
+          className={`anim-rise mt-12 grid gap-px border border-line bg-line ${
+            image ? "sm:grid-cols-3" : "sm:grid-cols-3"
+          }`}
+          style={{ animationDelay: "240ms" }}
+        >
+          {meta.map((m) => (
+            <div
+              key={m.label}
+              className="flex flex-col justify-between bg-mist px-6 py-6"
+            >
+              <dt className="label text-ink-3">{m.label}</dt>
+              <dd className="font-display mt-3 text-xl tracking-[-0.02em]">
+                {m.value}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      ) : null}
+    </>
+  );
+
   return (
     <section className="grain bloom relative overflow-hidden border-b border-line">
       <div className="substrate-grid absolute inset-0" aria-hidden />
-      <div className="relative mx-auto max-w-[88rem] px-6 pt-20 pb-16 md:pt-28 md:pb-24 lg:px-10">
-        <p className="label label-tick anim-rise text-ink-3">{eyebrow}</p>
-        <h1
-          className="font-display t-hero anim-rise mt-7 max-w-5xl"
-          style={{ animationDelay: "80ms" }}
-        >
-          {title}
-        </h1>
-        <p
-          className="lede anim-rise mt-8 max-w-2xl"
-          style={{ animationDelay: "160ms" }}
-        >
-          {intro}
-        </p>
 
-        {meta ? (
-          <dl
-            className="anim-rise mt-14 grid gap-px border border-line bg-line sm:grid-cols-3"
-            style={{ animationDelay: "240ms" }}
-          >
-            {meta.map((m) => (
-              <div key={m.label} className="bg-mist px-6 py-6">
-                <dt className="label text-ink-3">{m.label}</dt>
-                <dd className="font-display mt-3 text-2xl tracking-[-0.03em]">
-                  {m.value}
-                </dd>
-              </div>
-            ))}
-          </dl>
-        ) : null}
-      </div>
+      {image ? (
+        <div className="relative mx-auto grid max-w-[88rem] items-center gap-12 px-6 pt-16 pb-14 md:pt-20 lg:grid-cols-12 lg:gap-12 lg:px-10 lg:pr-0 lg:pb-16">
+          <div className="lg:col-span-6">{copy}</div>
+          <div className="lg:col-span-6 lg:-mr-10 lg:h-full">
+            <div
+              className="anim-rise relative h-[20rem] w-full overflow-hidden bg-mist-2 sm:h-[26rem] lg:h-full lg:min-h-[30rem]"
+              style={{ animationDelay: "320ms" }}
+            >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover object-center"
+              />
+              <div
+                className="pointer-events-none absolute inset-0 hidden lg:block"
+                style={{
+                  background:
+                    "linear-gradient(to right, var(--color-mist) 0%, rgba(255,255,255,0) 16%)",
+                }}
+                aria-hidden
+              />
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div className="relative mx-auto max-w-[88rem] px-6 pt-20 pb-16 md:pt-28 md:pb-24 lg:px-10">
+          {copy}
+        </div>
+      )}
     </section>
   );
 }

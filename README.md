@@ -22,13 +22,28 @@ safety testing, HACCP systems, audits and specialist QA labour hire.
 - Fonts self-hosted at build time via `next/font`: Archivo (headings),
   Instrument Sans (body), IBM Plex Mono (data labels)
 
-## Hero photograph
+## Photography
 
-The home page hero expects `public/hero-lab.jpg`. Drop the file in and it is
-used on the next build; until then the hero falls back to the
-certificate-of-analysis panel, so a missing image never breaks the page. See
-`public/README.txt` for sizing guidance and
-`src/components/HeroMedia.tsx` to change the path.
+| Served file | Used on | Source |
+| --- | --- | --- |
+| `public/hero-lab.jpg` | Home hero | `assets/epitome-hero.png` |
+| `public/qa-analyst.jpg` | Labour hire hero | `assets/epitome-other.png` |
+
+`assets/` holds the original uploads and is not served. The files in `public/`
+are cropped and compressed derivatives — regenerate them from `assets/` with
+`sharp` if the originals change.
+
+`epitome-hero.png` arrived as a finished banner with the logo, headline and
+body copy baked into the left third. It is cropped to the photograph alone so
+the page keeps live, responsive, accessible text rather than shipping an image
+of text.
+
+If `public/hero-lab.jpg` is ever missing, the home hero falls back to the
+certificate-of-analysis panel rather than rendering a broken image — see
+`src/components/HeroMedia.tsx`. `PageHero` takes an optional `image` prop to
+give any other page the same split treatment.
+
+Only publish photographs you own or are licensed to use.
 
 ## Local development
 

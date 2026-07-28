@@ -35,6 +35,10 @@ export default function LabourHirePage() {
           { label: "Coverage", value: site.regionShort },
           { label: "Notice", value: "Short notice cover" },
         ]}
+        image={{
+          src: "/qa-analyst.jpg",
+          alt: "An Epitome Quality Group analyst inspecting a culture plate while recording the result on a clipboard",
+        }}
       />
 
       {/* --------------------------------------------------- the argument */}
