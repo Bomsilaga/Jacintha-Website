@@ -59,7 +59,7 @@ export default function ContactPage() {
 
                 <a
                   href={site.phoneHref}
-                  className="font-display mt-10 block text-5xl tracking-[-0.04em] text-spruce transition-opacity hover:opacity-70 md:text-6xl"
+                  className="font-display mt-10 block text-5xl tracking-[-0.04em] text-petrol transition-opacity hover:opacity-70 md:text-6xl"
                 >
                   {site.phoneDisplay}
                 </a>
@@ -95,53 +95,53 @@ export default function ContactPage() {
           <aside className="lg:col-span-4 lg:col-start-9">
             <Reveal delay={140}>
               {/* Business card block */}
-              <div className="grain relative overflow-hidden border border-line bg-spruce p-9 text-bone">
+              <div className="grain relative overflow-hidden border border-line band-deep p-9 text-mist">
                 <div
                   className="substrate-grid-inv absolute inset-0 opacity-60"
                   aria-hidden
                 />
                 <div className="relative">
-                  <Mark className="h-11 w-11 text-bone" />
+                  <Mark className="h-11 w-11 text-mist" />
                   <p className="font-display mt-8 text-2xl tracking-[-0.03em]">
                     {site.name}
                   </p>
-                  <p className="label mt-3 text-agar">{site.tagline}</p>
+                  <p className="label mt-3 text-aqua">{site.tagline}</p>
 
                   <dl className="mt-8 space-y-5 border-t border-line-inv pt-7">
                     <div>
-                      <dt className="label text-bone/45">Phone</dt>
+                      <dt className="label text-mist/45">Phone</dt>
                       <dd className="mt-2">
-                        <a href={site.phoneHref} className="link-draw text-bone">
+                        <a href={site.phoneHref} className="link-draw text-mist">
                           {site.phoneDisplay}
                         </a>
                       </dd>
                     </div>
                     <div>
-                      <dt className="label text-bone/45">Email</dt>
+                      <dt className="label text-mist/45">Email</dt>
                       <dd className="mt-2">
                         <a
                           href={site.emailHref}
-                          className="link-draw break-all text-bone"
+                          className="link-draw break-all text-mist"
                         >
                           {site.email}
                         </a>
                       </dd>
                     </div>
                     <div>
-                      <dt className="label text-bone/45">Chief Executive</dt>
-                      <dd className="mt-2 text-bone">{site.ceo}</dd>
+                      <dt className="label text-mist/45">Chief Executive</dt>
+                      <dd className="mt-2 text-mist">{site.ceo}</dd>
                     </div>
                     <div>
-                      <dt className="label text-bone/45">ABN</dt>
-                      <dd className="mt-2 text-bone">{site.abn}</dd>
+                      <dt className="label text-mist/45">ABN</dt>
+                      <dd className="mt-2 text-mist">{site.abn}</dd>
                     </div>
                     <div>
-                      <dt className="label text-bone/45">Service area</dt>
-                      <dd className="mt-2 text-bone">{site.region}</dd>
+                      <dt className="label text-mist/45">Service area</dt>
+                      <dd className="mt-2 text-mist">{site.region}</dd>
                     </div>
                     <div>
-                      <dt className="label text-bone/45">Hours</dt>
-                      <dd className="mt-2 text-bone">{site.hours}</dd>
+                      <dt className="label text-mist/45">Hours</dt>
+                      <dd className="mt-2 text-mist">{site.hours}</dd>
                     </div>
                   </dl>
                 </div>
@@ -152,7 +152,7 @@ export default function ContactPage() {
               <dl className="mt-10 divide-y divide-line border-y border-line">
                 {reasons.map((r) => (
                   <div key={r.k} className="py-5">
-                    <dt className="label text-agar-2">{r.k}</dt>
+                    <dt className="label text-aqua-2">{r.k}</dt>
                     <dd className="mt-3 text-sm leading-relaxed text-ink-2">
                       {r.v}
                     </dd>

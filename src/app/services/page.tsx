@@ -45,16 +45,16 @@ export default function ServicesPage() {
                   <li key={s.id}>
                     <a
                       href={`#${s.id}`}
-                      className="link-draw flex gap-3 text-sm text-ink-2 hover:text-spruce"
+                      className="link-draw flex gap-3 text-sm text-ink-2 hover:text-petrol"
                     >
-                      <span className="label pt-1 text-agar-2">{s.index}</span>
+                      <span className="label pt-1 text-aqua-2">{s.index}</span>
                       {s.title}
                     </a>
                   </li>
                 ))}
               </ol>
 
-              <div className="mt-10 border border-line bg-bone-2 p-6">
+              <div className="mt-10 border border-line bg-mist-2 p-6">
                 <p className="label text-ink-3">Not sure where to start?</p>
                 <p className="mt-3 text-sm leading-relaxed text-ink-2">
                   Send us your product range and we will scope it for you.
@@ -70,9 +70,9 @@ export default function ServicesPage() {
             <ul className="space-y-px bg-line">
               {services.map((service, i) => (
                 <Reveal as="li" key={service.id} delay={i * 40}>
-                  <article id={service.id} className="scroll-mt-32 bg-bone py-12">
+                  <article id={service.id} className="scroll-mt-32 bg-mist py-12">
                     <div className="flex items-baseline gap-5">
-                      <span className="label text-agar-2">{service.index}</span>
+                      <span className="label text-aqua-2">{service.index}</span>
                       <div className="rule flex-1" />
                     </div>
 
@@ -89,7 +89,7 @@ export default function ServicesPage() {
                           className="flex items-start gap-3 border-t border-line pt-3 text-sm text-ink-2"
                         >
                           <span
-                            className="mt-[0.45rem] h-1.5 w-1.5 shrink-0 bg-agar-2"
+                            className="mt-[0.45rem] h-1.5 w-1.5 shrink-0 bg-aqua-2"
                             aria-hidden
                           />
                           {point}
@@ -105,7 +105,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Method recap */}
-      <section className="border-y border-line bg-bone-2">
+      <section className="border-y border-line bg-mist-2">
         <div className="mx-auto max-w-[88rem] px-6 py-20 md:py-28 lg:px-10">
           <Reveal>
             <p className="label label-tick text-ink-3">How an engagement runs</p>
@@ -113,8 +113,8 @@ export default function ServicesPage() {
           <ol className="mt-10 grid gap-px border border-line bg-line md:grid-cols-4">
             {process.map((step, i) => (
               <Reveal as="li" key={step.step} delay={i * 80}>
-                <div className="h-full bg-bone-2 p-7">
-                  <p className="label text-agar-2">{step.step}</p>
+                <div className="card h-full bg-mist-2 p-7">
+                  <p className="label text-aqua-2">{step.step}</p>
                   <h3 className="font-display mt-6 text-2xl tracking-[-0.03em]">
                     {step.title}
                   </h3>

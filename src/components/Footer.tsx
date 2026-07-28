@@ -6,45 +6,45 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="grain grain-inv relative overflow-hidden bg-ink text-bone">
+    <footer className="grain grain-inv relative overflow-hidden bg-ink text-mist">
       <div className="substrate-grid-inv absolute inset-0 opacity-60" aria-hidden />
 
       <div className="relative mx-auto max-w-[88rem] px-6 lg:px-10">
         <div className="grid gap-14 py-20 md:grid-cols-12">
           <div className="md:col-span-5">
             <div className="flex items-center gap-3">
-              <Mark className="h-10 w-10 text-bone" />
+              <Mark className="h-10 w-10 text-mist" />
               <span className="font-display text-2xl tracking-[-0.03em]">
                 Epitome Quality Group
               </span>
             </div>
-            <p className="mt-6 max-w-sm text-[0.98rem] leading-relaxed text-bone/65">
+            <p className="mt-6 max-w-sm text-[0.98rem] leading-relaxed text-mist/65">
               Quality control consultancy and specialist QA labour hire for
               producers, processors and food service operators across{" "}
               {site.region}.
             </p>
             <a
               href={site.phoneHref}
-              className="font-display mt-8 block text-4xl text-agar transition-opacity hover:opacity-70"
+              className="font-display mt-8 block text-4xl text-aqua transition-opacity hover:opacity-70"
             >
               {site.phoneDisplay}
             </a>
             <a
               href={site.emailHref}
-              className="link-draw mt-2 inline-block text-bone/80"
+              className="link-draw mt-2 inline-block text-mist/80"
             >
               {site.email}
             </a>
           </div>
 
           <div className="md:col-span-3">
-            <p className="label label-tick text-bone/45">Navigate</p>
+            <p className="label label-tick text-mist/45">Navigate</p>
             <ul className="mt-6 space-y-3">
               {nav.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="link-draw text-bone/80 hover:text-bone"
+                    className="link-draw text-mist/80 hover:text-mist"
                   >
                     {item.label}
                   </Link>
@@ -54,7 +54,7 @@ export default function Footer() {
           </div>
 
           <div className="md:col-span-4">
-            <p className="label label-tick text-bone/45">Services</p>
+            <p className="label label-tick text-mist/45">Services</p>
             <ul className="mt-6 space-y-3">
               {services.map((service) => (
                 <li key={service.id}>
@@ -64,7 +64,7 @@ export default function Footer() {
                         ? "/labour-hire"
                         : `/services#${service.id}`
                     }
-                    className="link-draw text-bone/80 hover:text-bone"
+                    className="link-draw text-mist/80 hover:text-mist"
                   >
                     {service.title}
                   </Link>
@@ -75,13 +75,13 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-line-inv py-8">
-          <p className="label text-bone/45">{site.legalLine}</p>
+          <p className="label text-mist/45">{site.legalLine}</p>
           <div className="mt-5 grid gap-4 md:grid-cols-3">
-            <p className="label text-bone/45">
+            <p className="label text-mist/45">
               © {year} {site.legalEntity}
             </p>
-            <p className="label text-bone/45 md:text-center">ABN {site.abn}</p>
-            <p className="label text-bone/45 md:text-right">
+            <p className="label text-mist/45 md:text-center">ABN {site.abn}</p>
+            <p className="label text-mist/45 md:text-right">
               {site.ceo} · {site.ceoTitle}
             </p>
           </div>

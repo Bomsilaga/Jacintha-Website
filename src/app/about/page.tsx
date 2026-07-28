@@ -94,24 +94,24 @@ export default function AboutPage() {
       </section>
 
       {/* Leadership */}
-      <section className="grain relative overflow-hidden border-y border-line bg-spruce text-bone">
+      <section className="grain relative overflow-hidden border-y border-line band-deep text-mist">
         <div className="substrate-grid-inv absolute inset-0 opacity-70" aria-hidden />
         <div className="relative mx-auto max-w-[88rem] px-6 py-24 md:py-32 lg:px-10">
           <div className="grid gap-14 lg:grid-cols-12">
             <div className="lg:col-span-5">
               <Reveal>
-                <p className="label label-tick text-agar">Leadership</p>
+                <p className="label label-tick text-aqua">Leadership</p>
                 <div className="mt-10 border border-line-inv p-10">
-                  <Mark className="h-14 w-14 text-bone" />
+                  <Mark className="h-14 w-14 text-mist" />
                   <p className="font-display mt-10 text-5xl tracking-[-0.03em]">
                     {site.ceo}
                   </p>
-                  <p className="label mt-4 text-agar">{site.ceoTitle}</p>
+                  <p className="label mt-4 text-aqua">{site.ceoTitle}</p>
                   <div className="mt-8 border-t border-line-inv pt-6">
-                    <p className="label text-bone/45">Direct line</p>
+                    <p className="label text-mist/45">Direct line</p>
                     <a
                       href={site.phoneHref}
-                      className="link-draw mt-2 inline-block text-lg text-bone"
+                      className="link-draw mt-2 inline-block text-lg text-mist"
                     >
                       {site.phoneDisplay}
                     </a>
@@ -127,14 +127,14 @@ export default function AboutPage() {
                   right. What they need is someone to measure it, name it, and
                   put a fix in writing.&rdquo;
                 </p>
-                <p className="mt-8 leading-relaxed text-bone/70">
+                <p className="mt-8 leading-relaxed text-mist/70">
                   {site.ceo} leads {site.name}, setting the technical direction of
                   every engagement and remaining personally contactable on live
                   issues. Under his direction the practice holds a simple rule:
                   no recommendation leaves the office unless it is supported by
                   a result, a validated method, or a clause of the Code.
                 </p>
-                <p className="mt-6 leading-relaxed text-bone/70">
+                <p className="mt-6 leading-relaxed text-mist/70">
                   That discipline is what clients are buying. It is also what
                   makes our reports usable in front of a certifier, a retailer&rsquo;s
                   technical team, or a local council environmental health
@@ -157,8 +157,8 @@ export default function AboutPage() {
         <ul className="mt-16 grid gap-px border border-line bg-line md:grid-cols-3">
           {principles.map((p, i) => (
             <Reveal as="li" key={p.title} delay={i * 90}>
-              <div className="h-full bg-bone p-9">
-                <p className="label text-agar-2">
+              <div className="card h-full bg-mist p-9">
+                <p className="label text-aqua-2">
                   R/{String(i + 1).padStart(2, "0")}
                 </p>
                 <h3 className="font-display mt-8 text-2xl tracking-[-0.03em]">
@@ -172,7 +172,7 @@ export default function AboutPage() {
       </section>
 
       {/* Commitments + business details */}
-      <section className="border-y border-line bg-bone-2">
+      <section className="border-y border-line bg-mist-2">
         <div className="mx-auto max-w-[88rem] px-6 py-24 md:py-32 lg:px-10">
           <div className="grid gap-14 lg:grid-cols-12">
             <div className="lg:col-span-5">
@@ -211,7 +211,7 @@ export default function AboutPage() {
             <ul className="grid gap-px self-start border border-line bg-line sm:grid-cols-2 lg:col-span-6 lg:col-start-7">
               {commitments.map((c, i) => (
                 <Reveal as="li" key={c.k} delay={i * 70}>
-                  <div className="h-full bg-bone-2 p-8">
+                  <div className="card h-full bg-mist-2 p-8">
                     <p className="label text-ink-3">{c.k}</p>
                     <p className="mt-4 leading-relaxed text-ink-2">{c.v}</p>
                   </div>

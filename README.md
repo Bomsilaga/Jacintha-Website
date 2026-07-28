@@ -19,8 +19,16 @@ safety testing, HACCP systems, audits and specialist QA labour hire.
 - **Next.js 16** (App Router, Turbopack) — every route prerendered as static HTML
 - **Tailwind CSS v4** with a custom design system in `src/app/globals.css`
 - **TypeScript**
-- Fonts self-hosted at build time via `next/font`: Fraunces (display),
+- Fonts self-hosted at build time via `next/font`: Archivo (headings),
   Instrument Sans (body), IBM Plex Mono (data labels)
+
+## Hero photograph
+
+The home page hero expects `public/hero-lab.jpg`. Drop the file in and it is
+used on the next build; until then the hero falls back to the
+certificate-of-analysis panel, so a missing image never breaks the page. See
+`public/README.txt` for sizing guidance and
+`src/components/HeroMedia.tsx` to change the path.
 
 ## Local development
 

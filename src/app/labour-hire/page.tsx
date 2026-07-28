@@ -80,7 +80,7 @@ export default function LabourHirePage() {
       </section>
 
       {/* ------------------------------------------------------------ roles */}
-      <section className="border-y border-line bg-bone-2">
+      <section className="border-y border-line bg-mist-2">
         <div className="mx-auto max-w-[88rem] px-6 py-24 md:py-32 lg:px-10">
           <SectionHead
             eyebrow="Roles we place"
@@ -91,17 +91,17 @@ export default function LabourHirePage() {
           <ul className="mt-16 grid gap-px border border-line bg-line md:grid-cols-2 lg:grid-cols-3">
             {roles.map((role, i) => (
               <Reveal as="li" key={role.title} delay={i * 70}>
-                <div className="group flex h-full flex-col bg-bone-2 p-8 transition-colors duration-300 hover:bg-spruce">
-                  <p className="label text-agar-2">
+                <div className="card group flex h-full flex-col bg-mist-2 p-8 transition-colors duration-300 hover:bg-petrol">
+                  <p className="label text-aqua-2">
                     R/{String(i + 1).padStart(2, "0")}
                   </p>
-                  <h3 className="font-display mt-9 text-2xl tracking-[-0.03em] transition-colors group-hover:text-bone">
+                  <h3 className="font-display mt-9 text-2xl tracking-[-0.03em] transition-colors group-hover:text-mist">
                     {role.title}
                   </h3>
-                  <p className="mt-4 flex-1 text-sm leading-relaxed text-ink-3 transition-colors group-hover:text-bone/70">
+                  <p className="mt-4 flex-1 text-sm leading-relaxed text-ink-3 transition-colors group-hover:text-mist/70">
                     {role.blurb}
                   </p>
-                  <p className="label mt-7 border-t border-line pt-5 text-ink-3 transition-colors group-hover:border-line-inv group-hover:text-agar">
+                  <p className="label mt-7 border-t border-line pt-5 text-ink-3 transition-colors group-hover:border-line-inv group-hover:text-aqua">
                     {role.basis}
                   </p>
                 </div>
@@ -122,9 +122,9 @@ export default function LabourHirePage() {
         <ol className="mt-16 grid gap-px border border-line bg-line md:grid-cols-2 lg:grid-cols-4">
           {labourHireSteps.map((step, i) => (
             <Reveal as="li" key={step.step} delay={i * 90}>
-              <div className="relative h-full bg-bone p-8">
+              <div className="card relative h-full bg-mist p-8">
                 <span
-                  className="absolute top-0 left-0 h-px bg-agar-2"
+                  className="absolute top-0 left-0 h-px bg-aqua-2"
                   style={{
                     width: `${((i + 1) / labourHireSteps.length) * 100}%`,
                   }}
@@ -144,7 +144,7 @@ export default function LabourHirePage() {
       </section>
 
       {/* ------------------------------------------------------ assurances */}
-      <section className="grain relative overflow-hidden border-y border-line bg-bone-2">
+      <section className="grain relative overflow-hidden border-y border-line bg-mist-2">
         <div className="substrate-grid absolute inset-0" aria-hidden />
         <div className="relative mx-auto max-w-[88rem] px-6 py-24 md:py-32 lg:px-10">
           <div className="grid gap-14 lg:grid-cols-12">
@@ -158,7 +158,7 @@ export default function LabourHirePage() {
             <dl className="grid gap-px self-start border border-line bg-line sm:grid-cols-2 lg:col-span-6 lg:col-start-7">
               {labourHireAssurances.map((a, i) => (
                 <Reveal key={a.k} delay={i * 70}>
-                  <div className="h-full bg-bone-2 p-8">
+                  <div className="card h-full bg-mist-2 p-8">
                     <dt className="font-display text-xl tracking-[-0.03em]">
                       {a.k}
                     </dt>
@@ -175,7 +175,7 @@ export default function LabourHirePage() {
 
       {/* ------------------------------------------------------ candidates */}
       <section className="mx-auto max-w-[88rem] px-6 py-24 md:py-32 lg:px-10">
-        <div className="grid gap-14 border border-line bg-bone p-10 md:p-16 lg:grid-cols-12">
+        <div className="grid gap-14 border border-line bg-mist p-10 md:p-16 lg:grid-cols-12">
           <div className="lg:col-span-6">
             <Reveal>
               <p className="label label-tick text-ink-3">For candidates</p>
@@ -204,7 +204,7 @@ export default function LabourHirePage() {
                     className="flex items-start gap-3 border-t border-line pt-4 text-sm text-ink-2"
                   >
                     <span
-                      className="mt-[0.42rem] h-1.5 w-1.5 shrink-0 bg-agar-2"
+                      className="mt-[0.42rem] h-1.5 w-1.5 shrink-0 bg-aqua-2"
                       aria-hidden
                     />
                     {item}

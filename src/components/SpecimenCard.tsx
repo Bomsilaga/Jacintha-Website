@@ -13,36 +13,20 @@ const rows = [
 export default function SpecimenCard() {
   return (
     <div className="relative">
-      {/* Stacked paper behind, so the card reads as one sheet off a pile */}
-      <div
-        className="absolute inset-0 translate-x-3 translate-y-3 border border-line bg-bone-2"
-        aria-hidden
-      />
-      <div
-        className="absolute inset-0 translate-x-1.5 translate-y-1.5 border border-line bg-bone-3/60"
-        aria-hidden
-      />
-
-      <div className="relative border border-ink/25 bg-bone shadow-[0_30px_60px_-40px_rgba(15,23,20,0.85)]">
-        {/* Scan line sweeping the card — the "reading" gesture */}
-        <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div
-            className="h-16 w-full bg-gradient-to-b from-transparent via-agar/25 to-transparent"
-            style={{ animation: "sweep 5.5s ease-in-out infinite" }}
-          />
-        </div>
-
-        <header className="flex items-center justify-between border-b border-line px-6 py-4">
+      {/* A single clean document panel. The stacked-paper illustration this
+          replaced read as a design flourish rather than a report. */}
+      <div className="relative overflow-hidden border border-mist-3 bg-mist shadow-[0_24px_48px_-28px_rgba(12,28,40,0.32)]">
+        <header className="flex items-center justify-between border-b border-line bg-mist-2 px-6 py-4">
           <p className="label text-ink-3">Certificate of analysis</p>
-          <p className="label text-spruce">SPEC · 0417</p>
+          <p className="label text-petrol">SPEC · 0417</p>
         </header>
 
         <dl className="grid grid-cols-2 gap-px border-b border-line bg-line">
-          <div className="bg-bone px-6 py-4">
+          <div className="bg-mist px-6 py-4">
             <dt className="label text-ink-3">Matrix</dt>
             <dd className="mt-2 text-sm font-medium">Ready-to-eat, chilled</dd>
           </div>
-          <div className="bg-bone px-6 py-4">
+          <div className="bg-mist px-6 py-4">
             <dt className="label text-ink-3">Received</dt>
             <dd className="mt-2 text-sm font-medium">Chain of custody intact</dd>
           </div>
@@ -55,13 +39,13 @@ export default function SpecimenCard() {
                 <span className="text-[0.82rem] font-medium text-ink-2">
                   {row.analyte}
                 </span>
-                <span className="label whitespace-nowrap text-spruce">
+                <span className="label whitespace-nowrap text-petrol">
                   {row.result}
                 </span>
               </div>
-              <div className="mt-2.5 h-[3px] w-full bg-bone-3">
+              <div className="mt-2.5 h-[3px] w-full bg-mist-3">
                 <div
-                  className="anim-bar h-full bg-spruce-2"
+                  className="anim-bar h-full bg-petrol-2"
                   style={{
                     width: `${row.fill}%`,
                     animationDelay: `${600 + i * 130}ms`,
@@ -72,10 +56,10 @@ export default function SpecimenCard() {
           ))}
         </ul>
 
-        <footer className="flex items-center justify-between gap-4 border-t border-line bg-spruce px-6 py-4 text-bone">
-          <p className="label text-bone/60">Specification</p>
-          <p className="label flex items-center gap-2 text-agar">
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-agar" />
+        <footer className="flex items-center justify-between gap-4 border-t border-line bg-petrol px-6 py-4 text-mist">
+          <p className="label text-mist/60">Specification</p>
+          <p className="label flex items-center gap-2 text-aqua">
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-aqua" />
             Conforms
           </p>
         </footer>

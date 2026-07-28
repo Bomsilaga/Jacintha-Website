@@ -13,7 +13,7 @@ const initial = {
 };
 
 const field =
-  "w-full border border-line bg-bone px-4 py-3.5 text-[0.95rem] text-ink placeholder:text-ink-3/60 transition-colors focus:border-spruce focus:outline-none";
+  "w-full border border-line bg-mist px-4 py-3.5 text-[0.95rem] text-ink placeholder:text-ink-3/60 transition-colors focus:border-petrol focus:outline-none";
 
 /**
  * Composes a structured enquiry and hands it to the visitor's mail client.
@@ -143,7 +143,7 @@ export default function EnquiryForm() {
       {sent ? (
         <p
           role="status"
-          className="border border-spruce bg-agar/20 px-4 py-3.5 text-sm text-spruce"
+          className="border border-petrol bg-aqua/20 px-4 py-3.5 text-sm text-petrol"
         >
           Your email app should now be open with the enquiry drafted. If nothing
           happened, email us directly at{" "}

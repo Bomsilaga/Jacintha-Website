@@ -17,8 +17,8 @@ export function SectionHead({
   align?: "left" | "center";
   tone?: "light" | "dark";
 }) {
-  const muted = tone === "dark" ? "text-bone/55" : "text-ink-3";
-  const body = tone === "dark" ? "text-bone/70" : "text-ink-2";
+  const muted = tone === "dark" ? "text-mist/55" : "text-ink-3";
+  const body = tone === "dark" ? "text-mist/70" : "text-ink-2";
 
   return (
     <Reveal
@@ -41,7 +41,7 @@ export function StandardsMarquee() {
   return (
     <section
       aria-label="Standards and frameworks we work to"
-      className="overflow-hidden border-y border-line bg-bone-2 py-5"
+      className="overflow-hidden border-y border-line bg-mist-2 py-5"
     >
       <div className="flex w-max anim-marquee">
         {row.map((item, i) => (
@@ -50,7 +50,7 @@ export function StandardsMarquee() {
             className="label flex shrink-0 items-center gap-8 px-8 text-ink-3"
           >
             {item}
-            <span className="h-1 w-1 rounded-full bg-agar-2" aria-hidden />
+            <span className="h-1 w-1 rounded-full bg-aqua-2" aria-hidden />
           </span>
         ))}
       </div>
@@ -76,32 +76,32 @@ export function CtaBand({
   body?: string;
 }) {
   return (
-    <section className="grain grain-inv relative overflow-hidden bg-spruce text-bone">
+    <section className="grain grain-inv relative overflow-hidden band-deep text-mist">
       <div className="substrate-grid-inv absolute inset-0 opacity-70" aria-hidden />
       <div
         className="absolute -top-40 -right-32 h-[34rem] w-[34rem] rounded-full opacity-20 blur-3xl"
-        style={{ background: "var(--color-agar)" }}
+        style={{ background: "var(--color-aqua)" }}
         aria-hidden
       />
 
       <div className="relative mx-auto grid max-w-[88rem] gap-12 px-6 py-24 md:grid-cols-12 md:py-32 lg:px-10">
         <div className="md:col-span-7">
           <Reveal>
-            <p className="label label-tick text-agar">{eyebrow}</p>
+            <p className="label label-tick text-aqua">{eyebrow}</p>
             <h2 className="font-display t-1 mt-6">{title}</h2>
           </Reveal>
         </div>
 
         <div className="md:col-span-5 md:pt-4">
           <Reveal delay={120}>
-            <p className="text-[1.05rem] leading-relaxed text-bone/70">{body}</p>
+            <p className="text-[1.05rem] leading-relaxed text-mist/70">{body}</p>
             <div className="mt-9 flex flex-wrap gap-3">
-              <Link href="/contact" className="btn btn-agar">
+              <Link href="/contact" className="btn btn-aqua">
                 Request a scope
               </Link>
               <a
                 href={site.phoneHref}
-                className="btn border-bone/40 text-bone hover:border-bone hover:bg-bone hover:text-spruce"
+                className="btn border-mist/40 text-mist hover:border-mist hover:bg-mist hover:text-petrol"
               >
                 {site.phoneDisplay}
               </a>
@@ -150,7 +150,7 @@ export function PageHero({
             style={{ animationDelay: "240ms" }}
           >
             {meta.map((m) => (
-              <div key={m.label} className="bg-bone px-6 py-6">
+              <div key={m.label} className="bg-mist px-6 py-6">
                 <dt className="label text-ink-3">{m.label}</dt>
                 <dd className="font-display mt-3 text-2xl tracking-[-0.03em]">
                   {m.value}

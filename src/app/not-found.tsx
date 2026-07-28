@@ -7,7 +7,7 @@ export default function NotFound() {
     <section className="grain bloom relative overflow-hidden">
       <div className="substrate-grid absolute inset-0" aria-hidden />
       <div className="relative mx-auto flex min-h-[70vh] max-w-[88rem] flex-col justify-center px-6 py-24 lg:px-10">
-        <Mark className="h-12 w-12 text-spruce" />
+        <Mark className="h-12 w-12 text-petrol" />
         <p className="label label-tick mt-10 text-ink-3">Error 404</p>
         <h1 className="font-display t-hero mt-6 max-w-4xl">
           Sample not found.

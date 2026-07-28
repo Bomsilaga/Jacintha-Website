@@ -48,9 +48,9 @@ export default function IndustriesPage() {
         <ul className="grid gap-px border border-line bg-line md:grid-cols-2 lg:grid-cols-3">
           {industries.map((industry, i) => (
             <Reveal as="li" key={industry.title} delay={i * 70}>
-              <article className="group relative flex h-full flex-col overflow-hidden bg-bone p-9">
+              <article className="card group relative flex h-full flex-col overflow-hidden bg-mist p-9">
                 <span
-                  className="absolute inset-x-0 bottom-0 h-0 bg-agar/25 transition-all duration-500 group-hover:h-full"
+                  className="absolute inset-x-0 bottom-0 h-0 bg-aqua/25 transition-all duration-500 group-hover:h-full"
                   aria-hidden
                 />
                 <div className="relative">
@@ -81,7 +81,7 @@ export default function IndustriesPage() {
       </section>
 
       {/* Cross-cutting concerns */}
-      <section className="grain relative overflow-hidden border-y border-line bg-bone-2">
+      <section className="grain relative overflow-hidden border-y border-line bg-mist-2">
         <div className="substrate-grid absolute inset-0" aria-hidden />
         <div className="relative mx-auto max-w-[88rem] px-6 py-24 md:py-32 lg:px-10">
           <SectionHead
@@ -93,7 +93,7 @@ export default function IndustriesPage() {
           <dl className="mt-16 grid gap-px border border-line bg-line md:grid-cols-2">
             {concerns.map((c, i) => (
               <Reveal key={c.title} delay={i * 80}>
-                <div className="h-full bg-bone-2 p-9">
+                <div className="card h-full bg-mist-2 p-9">
                   <dt className="font-display text-2xl tracking-[-0.03em]">
                     {c.title}
                   </dt>
@@ -118,8 +118,8 @@ export default function IndustriesPage() {
           <ul className="grid gap-px self-start border border-line bg-line sm:grid-cols-2 lg:col-span-6 lg:col-start-7">
             {standards.map((s, i) => (
               <Reveal as="li" key={s} delay={i * 40}>
-                <div className="flex items-center gap-4 bg-bone px-6 py-5">
-                  <span className="label text-agar-2">
+                <div className="flex items-center gap-4 bg-mist px-6 py-5">
+                  <span className="label text-aqua-2">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <span className="text-sm font-medium text-ink-2">{s}</span>

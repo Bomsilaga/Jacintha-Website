@@ -45,20 +45,20 @@ export default function WorkPage() {
             <Reveal key={study.id} delay={i * 50}>
               <article
                 id={study.id}
-                className="scroll-mt-32 bg-bone px-0 py-12 md:px-0"
+                className="scroll-mt-32 bg-mist px-0 py-12 md:px-0"
               >
                 <div className="grid gap-10 lg:grid-cols-12">
                   {/* Rail */}
                   <div className="lg:col-span-3">
-                    <p className="label text-agar-2">{study.index}</p>
+                    <p className="label text-aqua-2">{study.index}</p>
                     <p className="font-display mt-6 text-2xl tracking-[-0.03em]">
                       {study.sector}
                     </p>
                     <p className="label mt-3 text-ink-3">{study.location}</p>
                     <p className="label mt-1.5 text-ink-3">{study.year}</p>
 
-                    <div className="mt-8 border border-line bg-bone-2 p-5">
-                      <p className="font-display text-3xl leading-none tracking-[-0.03em] text-spruce">
+                    <div className="mt-8 border border-line bg-mist-2 p-5">
+                      <p className="font-display text-3xl leading-none tracking-[-0.03em] text-petrol">
                         {study.metric.value}
                       </p>
                       <p className="label mt-3 text-ink-3">
@@ -72,20 +72,20 @@ export default function WorkPage() {
                     <h3 className="font-display t-2">{study.title}</h3>
 
                     <dl className="mt-8 grid gap-px border border-line bg-line md:grid-cols-3">
-                      <div className="bg-bone p-6">
-                        <dt className="label text-ochre">The challenge</dt>
+                      <div className="bg-mist p-6">
+                        <dt className="label text-amber">The challenge</dt>
                         <dd className="mt-4 text-sm leading-relaxed text-ink-2">
                           {study.challenge}
                         </dd>
                       </div>
-                      <div className="bg-bone p-6">
+                      <div className="bg-mist p-6">
                         <dt className="label text-ink-3">What we did</dt>
                         <dd className="mt-4 text-sm leading-relaxed text-ink-2">
                           {study.approach}
                         </dd>
                       </div>
-                      <div className="bg-bone p-6">
-                        <dt className="label text-spruce">The outcome</dt>
+                      <div className="bg-mist p-6">
+                        <dt className="label text-petrol">The outcome</dt>
                         <dd className="mt-4 text-sm leading-relaxed text-ink-2">
                           {study.outcome}
                         </dd>
@@ -111,7 +111,7 @@ export default function WorkPage() {
       </section>
 
       {/* ---------------------------------------------------- testimonials */}
-      <section className="grain relative overflow-hidden border-y border-line bg-spruce text-bone">
+      <section className="grain relative overflow-hidden border-y border-line band-deep text-mist">
         <div className="substrate-grid-inv absolute inset-0 opacity-70" aria-hidden />
         <div className="relative mx-auto max-w-[88rem] px-6 py-24 md:py-32 lg:px-10">
           <SectionHead
@@ -124,19 +124,19 @@ export default function WorkPage() {
           <ul className="mt-16 grid gap-px border border-line-inv bg-line-inv md:grid-cols-2">
             {testimonials.map((t, i) => (
               <Reveal as="li" key={t.org} delay={i * 80}>
-                <figure className="flex h-full flex-col justify-between bg-spruce p-9">
+                <figure className="flex h-full flex-col justify-between bg-petrol p-9">
                   <blockquote className="font-display text-2xl leading-[1.25] tracking-[-0.02em]">
-                    <span aria-hidden className="text-agar">
+                    <span aria-hidden className="text-aqua">
                       &ldquo;
                     </span>
                     {t.quote}
-                    <span aria-hidden className="text-agar">
+                    <span aria-hidden className="text-aqua">
                       &rdquo;
                     </span>
                   </blockquote>
                   <figcaption className="mt-10 border-t border-line-inv pt-5">
-                    <p className="label text-agar">{t.role}</p>
-                    <p className="mt-2.5 text-sm text-bone/60">{t.org}</p>
+                    <p className="label text-aqua">{t.role}</p>
+                    <p className="mt-2.5 text-sm text-mist/60">{t.org}</p>
                   </figcaption>
                 </figure>
               </Reveal>
@@ -161,7 +161,7 @@ export default function WorkPage() {
                 Quality Group
               </caption>
               <thead>
-                <tr className="border-b border-line bg-bone-2">
+                <tr className="border-b border-line bg-mist-2">
                   {["Ref", "Scope of works", "Sector", "Region", "Year", "Status"].map(
                     (h) => (
                       <th
@@ -179,9 +179,9 @@ export default function WorkPage() {
                 {contracts.map((c) => (
                   <tr
                     key={c.ref}
-                    className="border-b border-line last:border-0 transition-colors hover:bg-bone-2/70"
+                    className="border-b border-line last:border-0 transition-colors hover:bg-mist-2/70"
                   >
-                    <td className="label px-5 py-4 whitespace-nowrap text-spruce">
+                    <td className="label px-5 py-4 whitespace-nowrap text-petrol">
                       {c.ref}
                     </td>
                     <td className="px-5 py-4 text-sm font-medium text-ink">
@@ -194,14 +194,14 @@ export default function WorkPage() {
                       <span
                         className={`label inline-flex items-center gap-2 border px-2.5 py-1.5 ${
                           c.status === "Completed"
-                            ? "border-spruce/30 text-spruce"
-                            : "border-ochre/40 text-ochre"
+                            ? "border-petrol/30 text-petrol"
+                            : "border-amber/40 text-amber"
                         }`}
                       >
                         <span
                           aria-hidden
                           className={`h-1.5 w-1.5 rounded-full ${
-                            c.status === "Completed" ? "bg-agar-2" : "bg-ochre"
+                            c.status === "Completed" ? "bg-aqua-2" : "bg-amber"
                           }`}
                         />
                         {c.status}

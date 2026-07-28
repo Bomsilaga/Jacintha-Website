@@ -28,7 +28,7 @@ export default function Mark({ className = "", tone }: MarkProps) {
       />
       <path d="M5 20h30" stroke={stroke} strokeWidth="1" opacity="0.45" />
       <path d="M20 1.5v5M20 33.5v5M1.5 20h5M33.5 20h5" stroke={stroke} strokeWidth="1.4" />
-      <circle cx="25.4" cy="14.6" r="3.1" fill="var(--color-agar)" />
+      <circle cx="25.4" cy="14.6" r="3.1" fill="var(--color-aqua)" />
     </svg>
   );
 }

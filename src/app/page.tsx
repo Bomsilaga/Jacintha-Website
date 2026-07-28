@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
-import SpecimenCard from "@/components/SpecimenCard";
+import HeroMedia, { hasHeroPhoto } from "@/components/HeroMedia";
 import { CtaBand, SectionHead, StandardsMarquee } from "@/components/Bits";
 import { industries, principles, process, roles, services, site } from "@/lib/site";
 import { caseStudies, contracts, testimonials } from "@/lib/work";
@@ -11,12 +11,19 @@ export default function Home() {
 
   return (
     <>
-      {/* ------------------------------------------------------------ hero */}
+      {/* ------------------------------------------------------------ hero
+          Split hero: copy on the left, the laboratory photograph bleeding to
+          the right edge. Falls back to the report panel until the photo is
+          added — see HeroMedia. */}
       <section className="grain bloom relative overflow-hidden">
         <div className="substrate-grid absolute inset-0" aria-hidden />
 
-        <div className="relative mx-auto grid max-w-[88rem] gap-16 px-6 pt-16 pb-20 md:pt-24 lg:grid-cols-12 lg:gap-10 lg:px-10 lg:pt-28 lg:pb-28">
-          <div className="lg:col-span-7">
+        <div
+          className={`relative mx-auto grid max-w-[88rem] items-center gap-12 px-6 pt-14 pb-16 md:pt-20 lg:grid-cols-12 lg:gap-12 lg:px-10 lg:pt-20 lg:pb-20 ${
+            hasHeroPhoto ? "lg:pr-0" : ""
+          }`}
+        >
+          <div className={hasHeroPhoto ? "lg:col-span-6" : "lg:col-span-7"}>
             <p className="label label-tick anim-rise text-ink-3">
               {site.region} · ABN {site.abn}
             </p>
@@ -60,12 +67,15 @@ export default function Home() {
             >
               {[
                 { k: "Coverage", v: "All of Victoria" },
-                { k: "Contracts delivered", v: `${completed}+` },
+                { k: "Contracts", v: `${completed}+ delivered` },
                 { k: "Reporting", v: "Plain English" },
               ].map((item) => (
-                <div key={item.k} className="bg-bone px-5 py-5">
+                <div
+                  key={item.k}
+                  className="flex flex-col justify-between bg-mist px-5 py-5"
+                >
                   <p className="label text-ink-3">{item.k}</p>
-                  <p className="font-display mt-3 text-xl tracking-[-0.03em]">
+                  <p className="font-display mt-3 text-xl tracking-[-0.02em]">
                     {item.v}
                   </p>
                 </div>
@@ -73,22 +83,24 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Specimen card, deliberately overhanging the column grid */}
-          <div className="lg:col-span-5 lg:pt-10">
-            {/* Two wrappers on purpose: one owns the entrance, one the idle
-                float. Stacking both animations on a single element would make
-                the later `animation` shorthand win and cancel the fade-in. */}
+          <div
+            className={
+              hasHeroPhoto
+                ? "lg:col-span-6 lg:-mr-10 lg:h-full"
+                : "lg:col-span-5 lg:pt-10"
+            }
+          >
             <div
-              className="anim-rise mx-auto max-w-md lg:max-w-none"
+              className="anim-rise lg:h-full"
               style={{ animationDelay: "380ms" }}
             >
-              <div className="anim-drift">
-                <SpecimenCard />
-              </div>
+              <HeroMedia />
             </div>
-            <p className="label mt-6 text-center text-ink-3 lg:text-right">
-              Illustrative report layout
-            </p>
+            {hasHeroPhoto ? null : (
+              <p className="label mt-6 text-center text-ink-3 lg:text-right">
+                Illustrative report layout
+              </p>
+            )}
           </div>
         </div>
       </section>
@@ -125,7 +137,7 @@ export default function Home() {
 
               <ul className="mt-10 grid gap-px border border-line bg-line sm:grid-cols-3">
                 {principles.map((p) => (
-                  <li key={p.title} className="bg-bone p-6">
+                  <li key={p.title} className="bg-mist p-6">
                     <h3 className="font-display text-lg tracking-[-0.02em]">
                       {p.title}
                     </h3>
@@ -141,7 +153,7 @@ export default function Home() {
       </section>
 
       {/* -------------------------------------------------------- services */}
-      <section className="border-y border-line bg-bone-2">
+      <section className="border-y border-line bg-mist-2">
         <div className="mx-auto max-w-[88rem] px-6 py-24 md:py-32 lg:px-10">
           <SectionHead
             eyebrow="02 / Capability"
@@ -164,23 +176,23 @@ export default function Home() {
                       ? "/labour-hire"
                       : `/services#${service.id}`
                   }
-                  className="group flex h-full flex-col bg-bone p-8 transition-colors duration-300 hover:bg-spruce"
+                  className="card group flex h-full flex-col bg-mist p-8 transition-colors duration-300 hover:bg-petrol"
                 >
                   <div className="flex items-start justify-between gap-4">
-                    <span className="label text-agar-2 transition-colors group-hover:text-agar">
+                    <span className="label text-aqua-2 transition-colors group-hover:text-aqua">
                       {service.index}
                     </span>
                     <span
                       aria-hidden
-                      className="text-ink-3 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-bone"
+                      className="text-ink-3 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-mist"
                     >
                       →
                     </span>
                   </div>
-                  <h3 className="font-display mt-10 text-2xl tracking-[-0.03em] transition-colors group-hover:text-bone">
+                  <h3 className="font-display mt-10 text-2xl tracking-[-0.03em] transition-colors group-hover:text-mist">
                     {service.title}
                   </h3>
-                  <p className="mt-4 text-sm leading-relaxed text-ink-3 transition-colors group-hover:text-bone/70">
+                  <p className="mt-4 text-sm leading-relaxed text-ink-3 transition-colors group-hover:text-mist/70">
                     {service.summary}
                   </p>
                 </Link>
@@ -189,13 +201,13 @@ export default function Home() {
 
             {/* Grid-completing tile so the 7-item row never leaves a hole */}
             <Reveal as="li" delay={420}>
-              <div className="flex h-full flex-col justify-between bg-spruce p-8 text-bone">
-                <p className="label text-agar">Not sure what you need?</p>
+              <div className="flex h-full flex-col justify-between bg-petrol p-8 text-mist">
+                <p className="label text-aqua">Not sure what you need?</p>
                 <div>
                   <p className="font-display mt-10 text-2xl tracking-[-0.03em]">
                     Send us your product range and we will scope it.
                   </p>
-                  <Link href="/contact" className="btn btn-agar mt-8">
+                  <Link href="/contact" className="btn btn-aqua mt-8">
                     Get in touch
                   </Link>
                 </div>
@@ -237,8 +249,8 @@ export default function Home() {
             <ul className="grid gap-px self-start border border-line bg-line sm:grid-cols-2 lg:col-span-6 lg:col-start-7">
               {roles.map((role, i) => (
                 <Reveal as="li" key={role.title} delay={i * 60}>
-                  <div className="h-full bg-bone p-7">
-                    <p className="label text-agar-2">
+                  <div className="card h-full bg-mist p-7">
+                    <p className="label text-aqua-2">
                       R/{String(i + 1).padStart(2, "0")}
                     </p>
                     <h3 className="font-display mt-6 text-xl tracking-[-0.03em]">
@@ -256,7 +268,7 @@ export default function Home() {
       </section>
 
       {/* -------------------------------------------------- success stories */}
-      <section className="border-y border-line bg-bone-2">
+      <section className="border-y border-line bg-mist-2">
         <div className="mx-auto max-w-[88rem] px-6 py-24 md:py-32 lg:px-10">
           <SectionHead
             eyebrow="04 / Success stories"
@@ -269,14 +281,14 @@ export default function Home() {
               <Reveal as="li" key={study.id} delay={i * 80}>
                 <Link
                   href={`/work#${study.id}`}
-                  className="group flex h-full flex-col bg-bone-2 p-8 transition-colors duration-300 hover:bg-bone"
+                  className="card group flex h-full flex-col bg-mist-2 p-8 transition-colors duration-300 hover:bg-mist"
                 >
                   <div className="flex items-center justify-between gap-4">
-                    <span className="label text-agar-2">{study.index}</span>
+                    <span className="label text-aqua-2">{study.index}</span>
                     <span className="label text-ink-3">{study.year}</span>
                   </div>
 
-                  <p className="font-display mt-10 text-4xl leading-none tracking-[-0.03em] text-spruce">
+                  <p className="font-display mt-10 text-4xl leading-none tracking-[-0.03em] text-petrol">
                     {study.metric.value}
                   </p>
                   <p className="label mt-3 text-ink-3">{study.metric.label}</p>
@@ -288,7 +300,7 @@ export default function Home() {
                     {study.outcome}
                   </p>
 
-                  <p className="label mt-7 flex items-center gap-2 border-t border-line pt-5 text-spruce">
+                  <p className="label mt-7 flex items-center gap-2 border-t border-line pt-5 text-petrol">
                     {study.sector}
                     <span
                       aria-hidden
@@ -311,7 +323,7 @@ export default function Home() {
       </section>
 
       {/* ------------------------------------------------------ testimonials */}
-      <section className="grain grain-inv relative overflow-hidden bg-spruce text-bone">
+      <section className="grain grain-inv relative overflow-hidden band-deep text-mist">
         <div className="substrate-grid-inv absolute inset-0 opacity-70" aria-hidden />
         <div className="relative mx-auto max-w-[88rem] px-6 py-24 md:py-32 lg:px-10">
           <SectionHead
@@ -323,19 +335,19 @@ export default function Home() {
           <ul className="mt-14 grid gap-px border border-line-inv bg-line-inv md:grid-cols-2">
             {testimonials.map((t, i) => (
               <Reveal as="li" key={t.org} delay={i * 80}>
-                <figure className="flex h-full flex-col justify-between bg-spruce p-9">
+                <figure className="flex h-full flex-col justify-between bg-petrol p-9">
                   <blockquote className="font-display text-2xl leading-[1.25] tracking-[-0.02em]">
-                    <span aria-hidden className="text-agar">
+                    <span aria-hidden className="text-aqua">
                       &ldquo;
                     </span>
                     {t.quote}
-                    <span aria-hidden className="text-agar">
+                    <span aria-hidden className="text-aqua">
                       &rdquo;
                     </span>
                   </blockquote>
                   <figcaption className="mt-10 border-t border-line-inv pt-5">
-                    <p className="label text-agar">{t.role}</p>
-                    <p className="mt-2.5 text-sm text-bone/60">{t.org}</p>
+                    <p className="label text-aqua">{t.role}</p>
+                    <p className="mt-2.5 text-sm text-mist/60">{t.org}</p>
                   </figcaption>
                 </figure>
               </Reveal>
@@ -355,9 +367,9 @@ export default function Home() {
         <ol className="mt-16 grid gap-px border border-line bg-line md:grid-cols-2 lg:grid-cols-4">
           {process.map((step, i) => (
             <Reveal as="li" key={step.step} delay={i * 90}>
-              <div className="relative h-full bg-bone p-8">
+              <div className="card relative h-full bg-mist p-8">
                 <span
-                  className="absolute top-0 left-0 h-px bg-agar-2"
+                  className="absolute top-0 left-0 h-px bg-aqua-2"
                   style={{ width: `${((i + 1) / process.length) * 100}%` }}
                   aria-hidden
                 />
@@ -375,7 +387,7 @@ export default function Home() {
       </section>
 
       {/* ------------------------------------------------------ industries */}
-      <section className="grain relative overflow-hidden border-y border-line bg-bone-2">
+      <section className="grain relative overflow-hidden border-y border-line bg-mist-2">
         <div className="substrate-grid absolute inset-0" aria-hidden />
         <div className="relative mx-auto max-w-[88rem] px-6 py-24 md:py-32 lg:px-10">
           <div className="grid gap-12 lg:grid-cols-12">
@@ -395,7 +407,7 @@ export default function Home() {
             <ul className="grid gap-px border border-line bg-line sm:grid-cols-2 lg:col-span-8">
               {industries.map((industry, i) => (
                 <Reveal as="li" key={industry.title} delay={i * 60}>
-                  <div className="h-full bg-bone-2 p-7">
+                  <div className="card h-full bg-mist-2 p-7">
                     <h3 className="font-display text-xl tracking-[-0.03em]">
                       {industry.title}
                     </h3>
@@ -427,7 +439,7 @@ export default function Home() {
           <blockquote className="font-display mt-8 text-3xl leading-[1.15] tracking-[-0.03em] md:text-5xl">
             &ldquo;A test result is only worth what someone does with it. Our job
             is to make sure the person on the floor knows what to do
-            <span className="text-spruce"> before</span>{" "}
+            <span className="text-petrol"> before</span>{" "}
             the problem leaves the building.&rdquo;
           </blockquote>
           <footer className="label mt-10 text-ink-3">

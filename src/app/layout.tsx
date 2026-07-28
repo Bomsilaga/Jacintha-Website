@@ -1,13 +1,13 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, IBM_Plex_Mono, Instrument_Sans } from "next/font/google";
+import { Archivo, IBM_Plex_Mono, Instrument_Sans } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const fraunces = Fraunces({
+const archivo = Archivo({
   subsets: ["latin"],
-  variable: "--font-fraunces",
+  variable: "--font-archivo",
   display: "swap",
 });
 
@@ -88,7 +88,7 @@ export default function RootLayout({
   return (
     <html
       lang="en-AU"
-      className={`${fraunces.variable} ${instrument.variable} ${plexMono.variable} h-full antialiased`}
+      className={`${archivo.variable} ${instrument.variable} ${plexMono.variable} h-full antialiased`}
     >
       <head>
         {/* Scroll reveals are JS-driven; without JS the content must not
@@ -100,7 +100,7 @@ export default function RootLayout({
       <body className="flex min-h-full flex-col">
         <a
           href="#main"
-          className="label sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-100 focus:bg-spruce focus:px-4 focus:py-3 focus:text-bone"
+          className="label sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-100 focus:bg-petrol focus:px-4 focus:py-3 focus:text-mist"
         >
           Skip to content
         </a>
