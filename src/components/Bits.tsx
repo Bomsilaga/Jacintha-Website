@@ -50,7 +50,7 @@ export function StandardsMarquee() {
             className="label flex shrink-0 items-center gap-8 px-8 text-ink-3"
           >
             {item}
-            <span className="t-1 w-1 rounded-full bg-agar-2" aria-hidden />
+            <span className="h-1 w-1 rounded-full bg-agar-2" aria-hidden />
           </span>
         ))}
       </div>

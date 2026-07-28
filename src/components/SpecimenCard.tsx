@@ -75,7 +75,7 @@ export default function SpecimenCard() {
         <footer className="flex items-center justify-between gap-4 border-t border-line bg-spruce px-6 py-4 text-bone">
           <p className="label text-bone/60">Specification</p>
           <p className="label flex items-center gap-2 text-agar">
-            <span className="inline-block t-1.5 w-1.5 rounded-full bg-agar" />
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-agar" />
             Conforms
           </p>
         </footer>

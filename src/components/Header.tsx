@@ -102,7 +102,7 @@ export default function Header() {
             className="label flex items-center gap-3 border border-spruce px-4 py-3 text-spruce xl:hidden"
           >
             {open ? "Close" : "Menu"}
-            <span className="flex t-3 w-4 flex-col justify-between">
+            <span className="flex h-3 w-4 flex-col justify-between">
               <span
                 className={`block h-px w-full bg-current transition-transform duration-300 ${
                   open ? "translate-y-[5.5px] rotate-45" : ""

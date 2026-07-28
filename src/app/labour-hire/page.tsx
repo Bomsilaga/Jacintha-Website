@@ -204,7 +204,7 @@ export default function LabourHirePage() {
                     className="flex items-start gap-3 border-t border-line pt-4 text-sm text-ink-2"
                   >
                     <span
-                      className="mt-[0.42rem] t-1.5 w-1.5 shrink-0 bg-agar-2"
+                      className="mt-[0.42rem] h-1.5 w-1.5 shrink-0 bg-agar-2"
                       aria-hidden
                     />
                     {item}
