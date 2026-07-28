@@ -54,25 +54,47 @@ export default function Header() {
             : "border-transparent bg-mist/70 backdrop-blur-sm"
         }`}
       >
-        <div className="mx-auto flex max-w-[88rem] items-center justify-between gap-8 px-6 py-4 lg:px-10">
+        {/* The wordmark is set three times its previous size, so the bar wraps
+            the nav onto a second row when the lockup leaves no space, and the
+            whole lockup steps down once the page is scrolled to keep the
+            sticky header from eating the viewport. */}
+        <div className="mx-auto flex max-w-[88rem] flex-wrap items-center gap-x-8 gap-y-4 px-6 py-4 lg:px-10">
           <Link
             href="/"
-            className="group flex items-center gap-3"
+            className="group flex shrink-0 items-center gap-3 sm:gap-4"
             aria-label={`${site.name} — home`}
           >
-            <Mark className="h-9 w-9 shrink-0 text-petrol transition-transform duration-500 group-hover:rotate-90" />
-            <span className="leading-none">
-              <span className="font-display block text-[1.15rem] font-semibold tracking-[-0.03em] text-petrol">
+            <Mark
+              className={`shrink-0 text-petrol transition-[width,height,transform] duration-300 group-hover:rotate-90 ${
+                lifted
+                  ? "h-10 w-10"
+                  : "h-12 w-12 sm:h-16 sm:w-16 xl:h-[4.6rem] xl:w-[4.6rem]"
+              }`}
+            />
+            <span className="leading-[1.02]">
+              <span
+                className={`font-display block font-semibold tracking-[-0.025em] text-petrol transition-[font-size] duration-300 ${
+                  lifted
+                    ? "text-[1.3rem]"
+                    : "text-[1.6rem] sm:text-[2.35rem] xl:text-[3.45rem]"
+                }`}
+              >
                 Epitome Quality Group
               </span>
-              <span className="label mt-1 block text-ink-3">
+              <span
+                className={`label block text-ink-3 transition-[font-size,margin] duration-300 ${
+                  lifted
+                    ? "mt-1 text-[0.6875rem]"
+                    : "mt-1.5 text-[0.6875rem] sm:mt-2 sm:text-[0.8rem] xl:text-[0.95rem]"
+                }`}
+              >
                 Quality control &amp; QA hire
               </span>
             </span>
           </Link>
 
           <nav
-            className="hidden items-center gap-7 xl:flex"
+            className="ml-auto hidden items-center gap-7 xl:flex"
             aria-label="Primary"
           >
             {nav.map((item) => (
@@ -99,7 +121,7 @@ export default function Header() {
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-controls="mobile-nav"
-            className="label flex items-center gap-3 border border-petrol px-4 py-3 text-petrol xl:hidden"
+            className="label ml-auto flex items-center gap-3 border border-petrol px-4 py-3 text-petrol xl:hidden"
           >
             {open ? "Close" : "Menu"}
             <span className="flex h-3 w-4 flex-col justify-between">
