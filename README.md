@@ -11,7 +11,7 @@ safety testing, HACCP systems, audits and specialist QA labour hire.
 | ABN | 62 825 390 390 |
 | Chief Executive | Mac Ben |
 | Phone | 0487 907 952 |
-| Email | info@epitometesting.com.au |
+| Email | admin@epitomequalitygroup.com.au |
 | Service area | Victoria, Australia |
 
 ## Stack

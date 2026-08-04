@@ -13,12 +13,12 @@ export const site = {
   ceoTitle: "Chief Executive Officer",
   phoneDisplay: "0487 907 952",
   phoneHref: "tel:+61487907952",
-  email: "info@epitometesting.com.au",
-  emailHref: "mailto:info@epitometesting.com.au",
+  email: "admin@epitomequalitygroup.com.au",
+  emailHref: "mailto:admin@epitomequalitygroup.com.au",
   region: "Victoria, Australia",
   regionShort: "Victoria",
   hours: "Monday to Friday, 8:00am – 5:00pm AEST",
-  url: "https://epitometesting.com.au",
+  url: "https://epitomequalitygroup.com.au",
   description:
     "Epitome Quality Group is a Victorian quality control consultancy for the food industry, providing food safety testing, HACCP systems, audits and specialist QA labour hire.",
 } as const;
