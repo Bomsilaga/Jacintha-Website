@@ -1,0 +1,6 @@
+# Original, uncompressed image uploads. The served derivatives live in
+# public/ — these are kept in git for regeneration, not for deployment.
+assets/
+
+# Local build output; Vercel builds from source.
+.next/
