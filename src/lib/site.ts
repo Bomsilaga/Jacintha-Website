@@ -1,6 +1,8 @@
 export const site = {
   name: "Epitome Quality Group",
   shortName: "Epitome Quality",
+  /** Previous trading name, referenced by the rebrand notice on the home page. */
+  formerName: "The Epitome Testing",
   /** Trading name sits on top of the company; both appear in the footer. */
   legalEntity: "Mac Ben",
   legalLine: "Epitome Quality Group is a trading name of Mac Ben",

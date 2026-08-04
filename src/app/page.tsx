@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import HeroMedia, { hasHeroPhoto } from "@/components/HeroMedia";
+import RebrandNotice from "@/components/RebrandNotice";
 import { CtaBand, SectionHead, StandardsMarquee } from "@/components/Bits";
 import { industries, principles, process, roles, services, site } from "@/lib/site";
 import { caseStudies, contracts, testimonials } from "@/lib/work";
@@ -106,6 +107,9 @@ export default function Home() {
       </section>
 
       <StandardsMarquee />
+
+      {/* Time-limited: retire once the rebrand has bedded in. */}
+      <RebrandNotice />
 
       {/* -------------------------------------------------------- position */}
       <section className="mx-auto max-w-[88rem] px-6 py-24 md:py-32 lg:px-10">
